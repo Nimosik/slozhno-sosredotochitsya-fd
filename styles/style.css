@@ -6,7 +6,7 @@
   font-size: 18px;
   line-height: 23.4px;
   background-color: var(--page-background-color, #fff);
-  font-family: var(--page-font-family, "IBM Plex mono", monospace);
+  background-attachment: fixed;
 }
 
 /* Зона header  */
@@ -25,10 +25,6 @@
   );
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
-}
-
-.decorated-zone {
 }
 
 .decorated-zone::before,
@@ -138,7 +134,6 @@
   background-color: var(--accent-color, #ff0070);
   align-self: flex-start;
   justify-self: start;
-  border: 1px solid red;
   inline-size: 100%;
 }
 
@@ -208,7 +203,6 @@
 
 .footer {
   height: 100vh;
-  border: 1px solid red;
   min-height: 668px;
   display: grid;
   padding: clamp(10px, 0.0286rem + 2.5445vw, 20px);
@@ -245,23 +239,17 @@
 
   .section-how__articles-list {
     max-width: 472px;
+    grid-column-start: 2;
   }
 
   .section-how__title {
     height: 23px;
     margin-block-end: 20px;
+    grid-column-start: 2;
   }
   .section-gallery {
     grid-template-columns: 1fr;
     gap: 20px;
-  }
-
-  .section-how__title {
-    grid-column-start: 2;
-  }
-
-  .section-how__articles-list {
-    grid-column-start: 2;
   }
 
   .gallery-list {
