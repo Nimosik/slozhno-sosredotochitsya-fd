@@ -12,11 +12,8 @@
 /* Зона header  */
 
 .header {
-  height: 100vh;
-  min-height: 668px;
+  min-block-size: 100vh;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: min-content min-content 1fr 1fr;
   align-items: start;
   padding: 10px;
   background-image: var(
@@ -84,7 +81,7 @@
   justify-self: end;
   align-self: start;
   margin-top: 65px;
-  color: var(--secondary-color);
+  color: var(--secondary-color, #ff0070);
   cursor: pointer;
 }
 
@@ -133,7 +130,7 @@
 }
 
 .header__title {
-  margin-block-start: 55px;
+  margin-block: 55px;
   color: var(--highlight-color, #000028);
   font-weight: 700;
   font-size: inherit;
@@ -142,6 +139,7 @@
   align-self: flex-start;
   justify-self: start;
   inline-size: 100%;
+  overflow: auto;
 }
 
 /* Секции  */
@@ -152,20 +150,24 @@
   padding: 40px 10px;
 }
 
-.link {
-  text-decoration: none;
-}
-
 .shadow-decor {
   text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
 }
 
+.link {
+  text-decoration: none;
+}
+
 .link.shadow-decor:hover {
-  text-decoration: underline;
+  border-bottom: 1px solid var(--text-color, #f1b2ce);
 }
 
 .link.shadow-decor:focus {
-  border: 1px solid var(--text-color, #F1B2CE);
+  outline: 0;
+}
+
+.link.shadow-decor:focus-visible {
+  outline: 1px solid currentColor;
 }
 
 .section {
@@ -295,7 +297,7 @@ h4.title {
   .page__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     align-self: flex-start;
-    margin-block-start: 110px;
+    margin-block-start: 0px;
   }
 
   .header {
@@ -303,7 +305,7 @@ h4.title {
   }
 
   .header__title {
-    margin-block-start: 160px;
+    /* margin-block-start: 160px; */
     justify-self: end;
     inline-size: clamp(364px, calc(100% / 2 - 10px), 491px);
   }
@@ -327,7 +329,7 @@ h4.title {
 
 @media (width >= 1024px) {
   .page__title {
-    margin-block-start: 200px;
+    margin-block-start: 160px;
   }
 
   .section-how__articles-list {
@@ -335,7 +337,7 @@ h4.title {
   }
 
   .header__title {
-    margin-block-start: 117px;
+    margin-block-end: 85px;
   }
 
   .section {
